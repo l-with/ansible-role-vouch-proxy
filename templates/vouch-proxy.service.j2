@@ -1,0 +1,17 @@
+[Unit]
+Description=Vouch Proxy
+After=network.target
+
+[Service]
+Type=simple
+User=vouch-proxy
+Environment="VOUCH_ROOT={{ vouch_proxy_home }}"
+WorkingDirectory={{ vouch_proxy_home }}
+ExecStart=/bin/vouch-proxy
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=60s
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target
