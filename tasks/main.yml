@@ -10,8 +10,10 @@
 
 - name: Ensure vouch-proxy repository
   ansible.builtin.git:
-    repo: https://github.com/vouch/vouch-proxy.git
-    dest: "{{ vouch_proxy_home }}"
+    repo:    https://github.com/vouch/vouch-proxy.git
+    depth:   1
+    version: "{{ vouch_proxy_version }}"
+    dest:    "{{ vouch_proxy_home }}"
 
 - name: Ensure build vouch-proxy binary
   ansible.builtin.command: 

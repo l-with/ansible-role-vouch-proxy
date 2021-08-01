@@ -1,5 +1,6 @@
 ---
 
-vouch_proxy_home: /srv/vouch-proxy
+vouch_proxy_home:    /srv/vouch-proxy
+vouch_proxy_version: v0.27.1
 
 ...
